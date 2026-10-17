@@ -13,7 +13,7 @@ I run with Nike Run Club. It tracks every run well, but its plans aren't persona
 **OpenStride** is an iOS running coach that reads your data from Apple Health and plans your week around it:
 
 - **Heart rate zones** from your resting HR and the highest HR seen in your own runs (Karvonen)
-- **Pace zones** from your best recent effort (Jack Daniels' VDOT)
+- **Pace zones** from your best recent effort, or from pace plus heart rate when the effort wasn't all-out (Jack Daniels' VDOT)
 - **Training load** per run and your 7-day vs 28-day load ratio
 - **HR drift** between the first and second half of each run
 - **How much of last week you actually did**
@@ -22,15 +22,21 @@ Every week, Gemma (Google's open-weight model) reviews those signals, adjusts th
 
 ### Pricing
 
-One-time purchase on the App Store and Google Play: **$10 (₹599 in India)**. No subscription or account.
+One-time purchase on the App Store and Google Play: **$10 (₹599 in India)**. No subscription or account needed.
 
 Adaptive training plans are already a paid category (Runna, TrainingPeaks), sold as monthly subscriptions. OpenStride can skip the subscription because the coach runs on the phone: after someone buys it, they cost nothing to serve. The app is iOS only today; the Play Store version comes with Android.
+
+Here's how it would look on the App Store ([full sample listing](https://ansh-saini.github.io/open-stride/appstore/)):
+
+| | | |
+|---|---|---|
+| ![A coach that reads your body](https://ansh-saini.github.io/open-stride/appstore/web/appstore-1.jpg) | ![It notices when you overdo it](https://ansh-saini.github.io/open-stride/appstore/web/appstore-2.jpg) | ![Runs on your iPhone](https://ansh-saini.github.io/open-stride/appstore/web/appstore-6.jpg) |
 
 ## Demo
 
 **Demo page with the full 60 s video: [ansh-saini.github.io/open-stride](https://ansh-saini.github.io/open-stride)**
 
-Recorded on my iPhone 13 Pro with a sample runner who doubled their mileage last week. Gemma 3 4B runs on the phone; the 20-second planning step is sped up.
+Recorded on my iPhone with a runner who doubled their mileage last week. Gemma 3 4B runs on the phone; the planning step is sped up.
 
 ![OpenStride demo](https://raw.githubusercontent.com/ansh-saini/open-stride/main/screenshots/openstride-demo.gif)
 
@@ -44,9 +50,7 @@ Recorded on my iPhone 13 Pro with a sample runner who doubled their mileage last
 
 ## How I Built It
 
-### Math in code, judgment in the model
-
-Small models are bad at arithmetic and good at reading a situation. I didn't want a 4B model inventing paces or mileage, so I split the work:
+I created several modules which work together in steps to deliver an optimial running plan:
 
 1. **CoachKit** (pure Swift, unit tested) computes zones, paces, load and drift, then builds a draft week: phase (base, build, peak, taper), weekly volume, a long run, quality sessions.
 2. Code turns the metrics into **signals** with fixed thresholds, each one OK or FLAG. For example: `acute_chronic_load_ratio = 1.98 -> FLAG: above 1.5, injury risk`.
@@ -54,9 +58,9 @@ Small models are bad at arithmetic and good at reading a situation. I didn't wan
 4. **Guardrails** apply the decision and override anything unsafe. No flag means the draft stands. A flag with too small a response gets a floor. The long run can't be dropped.
 5. **Gemma explains.** A second call writes the note from facts that code computed by diffing the draft against the final plan. Code writes the first sentence ("Your heart rate drifted 7.7% during recent runs."), and Gemma continues it. The note always matches what you see.
 
-If the model fails, a rule-based coach writes the week, so the app never breaks.
+If the model fails, a rule-based coach writes the week, so the week still gets planned.
 
-### An eval harness, because "looks fine" isn't a test
+### An eval harness
 
 I built six synthetic runners with seeded histories and an expected coach behavior for each:
 
@@ -79,37 +83,9 @@ I built six synthetic runners with seeded histories and an expected coach behavi
 | Gemma 3 4B (on-device) | 18 | 100% | 100% | 100% | 100% | 100% | 8.0s |
 | Gemma 3 1B (on-device) | 18 | 100% | 100% | 33% | 100% | 100% | 4.3s |
 
-"On its own" means right before any guardrail floor stepped in. Times are on an M2 Pro; on-device rows use the same 4-bit MLX weights the iPhone downloads. Gemma 1B gives safe plans only because of the guardrails, so 4B is the default.
-
-What the harness caught, in order:
-
-- **Gemma deleted the week.** Given a "rest" action, it removed the long run and once took a runner to 0 km. The action is now `drop`, the long run can't be dropped, and only one run per week can go.
-- **Gemma copied my JSON example.** The example showed a 20% cut and a Thursday change, so it cut volume for healthy runners and edited Thursdays that didn't exist. A neutral example fixed it.
-- **Sign confusion.** "Slow easy runs by 10 s" came back as `-10`. I renamed the field to `slow_easy_pace_by_sec` and treat the sign as intent.
-- **MLX doesn't constrain output.** Ollama enforces a JSON schema; MLX doesn't. On-device 4B scored 33% valid until I made the decoder accept the shapes Gemma actually produces (`"changes": ["Wed: make_easy ..."]`).
-- **Messages that contradicted the plan.** When a guardrail rejected a change, the note still described it. That led to the two-step decide-then-explain design.
-- **Gemma copied my instructions.** Told to "start with" a sentence, it sometimes wrote 'Start with "...' into the note. Now code writes that sentence and Gemma only continues.
-- **Gemma 1B can't judge.** It returns "no change" for nearly every runner. The guardrails keep it safe, but 4B is the coach worth shipping.
-
-### Making a 4B model fit on a 6 GB iPhone
-
-The first real-device run died. The jetsam report showed iOS killing OpenStride at 4.16 GB for page shortage on my iPhone 13 Pro. The weights are 2.4 GB, so most of the rest was prompt processing: Gemma's vocabulary is 262k tokens, and MLX prefilled 512 prompt tokens at a time. I measured peak memory on my Mac for different step sizes:
-
-| Prefill step | Peak MLX memory |
-|---|---|
-| 512 | 3,144 MB |
-| 64 | 2,806 MB |
-| 32 | 2,763 MB |
-
-At 64 tokens per step it fits. A full plan (both Gemma calls) now takes about 20 seconds on the 13 Pro. In case a phone still runs out of memory, the app writes a marker file before generating. If it launches and finds the marker, it switches to Gemma 3 1B and tells you why instead of crashing again.
-
 ### Real data is messier than test data
 
 My own runs exposed two things the personas didn't. None of my runs from the last four weeks have heart rate recorded, so there's no drift signal, and the coach has to work without it. And my "best effort" wasn't all-out, so the race formula underrated my fitness. Now, when heart rate exists, VDOT is also estimated from pace and heart rate reserve, and the higher estimate wins.
-
-### Testing the real HealthKit path
-
-The simulator has no runs, so a debug-only seeder writes a synthetic runner into Apple Health as real workouts with heart rate samples. An XCUITest launches the app, taps through the Health permission sheets, reads the data back through the real HealthKit queries, plans the week with Gemma and checks the screens. HR drift computed from those raw samples comes out at 7.7%, matching the persona.
 
 ### Stack
 
@@ -125,6 +101,21 @@ SwiftUI, HealthKit, Swift Charts, XCUITest on simulator and device, [MLX Swift L
 
 **Inspectable and swappable.** The Insights screen shows exactly what the coach saw and what it answered. Because the weights are open, I could test the same model on my Mac, in the simulator and on the phone, and I can swap in a newer Gemma or a fine-tune without changing the app.
 
+## Injury Prevention: The Too-Much-Too-Fast Problem
+
+The most common mistake runners make is doing too much too fast. A good week feels great, so the next one gets longer and faster, and the body's tendons and bones can't keep up with the lungs. A static plan can't see that coming. OpenStride watches for it every week:
+
+- **It measures the jump.** The load ratio compares your last 7 days of training to your 28-day average. Above 1.3, the coach cuts next week's volume by at least 10%. Above 1.5, it cuts at least 20% and allows only one hard session.
+- **It progresses slowly.** Weekly volume builds about 8% at a time from your 4-week average, so one big week doesn't become the new normal. A guardrail caps any week at 110% of that average plus 2 km, whatever the model asks for.
+- **It plans recovery weeks.** Every fourth week drops volume by 20%.
+- **It caps the long run.** The long run can't be more than 15% plus 1 km longer than your longest run in the last four weeks.
+- **It spaces hard days.** Hard sessions never fall on back-to-back days, there are at most two a week, and in the base phase, runners under 15 km a week get easy running only.
+- **It respects time off.** After 14 or more days without running, the plan starts from half your recent 4-week average with no hard sessions.
+- **It listens to your heart.** When your heart rate drifts more than 5% during easy runs, it slows your easy pace.
+- **It reacts to missed weeks.** If you finished less than 60% of last week, the next week gets lighter instead of trying to catch up.
+
+In the demo, the runner doubled their mileage in one week (load ratio 1.98). The draft plan had 31 km for the next week; the coach cut it to 25 km, kept one hard day, and explained why in the note.
+
 ## My First User
 
 My first user is me. I ran the device test on my own iPhone with two months of my real runs: 22 runs, mostly 3 to 5 km, averaging about 14 km a week.
@@ -133,9 +124,9 @@ What it got right: it planned four easy runs and a slightly longer Sunday run, a
 
 What it taught me: the first estimate of my fitness was too low, because my "best" run wasn't an all-out effort. That's why the app now also estimates fitness from heart rate. And none of my runs since September 21 have heart rate recorded, so there's no drift to read and the coach is working with less than it could.
 
-What I want next, as the user: an Apple Watch app that records runs with heart rate and shows the session's target pace and zone on the wrist. Then every run feeds the coach the data it needs.
+## Next Steps
 
-I haven't put it in front of other runners yet. That's the next step, through TestFlight.
+I had a ton of fun building this project as it solves a real problem for me, and I know for a fact that many people face this problem. I'm super excited to integrate this with Apple Watch and seeing how that transforms my running experience. It will give me access to real-time heart rate tracking and session feedback, ensuring the coach receives complete data for more accurate planning. Maybe the coach can say "Hey you're going too fast, slow down" into my earphones during my run itself.
 
 ## Prize Categories
 
