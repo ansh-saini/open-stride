@@ -101,7 +101,7 @@ SwiftUI, HealthKit, Swift Charts, XCUITest on simulator and device, [MLX Swift L
 
 **Inspectable and swappable.** The Insights screen shows exactly what the coach saw and what it answered. Because the weights are open, I could test the same model on my Mac, in the simulator and on the phone, and I can swap in a newer Gemma or a fine-tune without changing the app.
 
-## Injury Prevention: The Too-Much-Too-Fast Problem
+## Injury Prevention
 
 The most common mistake runners make is doing too much too fast. A good week feels great, so the next one gets longer and faster, and the body's tendons and bones can't keep up with the lungs. A static plan can't see that coming. OpenStride watches for it every week:
 
