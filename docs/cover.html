@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>OpenStride Cover</title>
+<!-- DEV cover image. Render at 1000x420 with device scale factor 2. -->
+<style>
+  * { box-sizing: border-box; margin: 0; }
+  html, body { width: 1000px; height: 420px; overflow: hidden; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif; color: #fff7f0;
+    background:
+      radial-gradient(520px 420px at 78% 70%, rgba(255,122,47,0.55), transparent 70%),
+      radial-gradient(420px 300px at 0% 0%, rgba(255,122,47,0.16), transparent 70%),
+      #15110e;
+    position: relative;
+  }
+  .left { position: absolute; left: 56px; top: 64px; width: 500px; }
+  .brand { display: flex; align-items: center; gap: 14px; }
+  .brand img { width: 58px; height: 58px; }
+  .brand span { font-size: 30px; font-weight: 800; letter-spacing: -0.01em; }
+  h1 { font-size: 42px; line-height: 1.06; font-weight: 800; letter-spacing: -0.03em; margin-top: 26px; }
+  h1 em { font-style: normal; color: #ff7a2f; }
+  p { font-size: 17px; line-height: 1.45; color: #c9b8aa; margin-top: 14px; max-width: 440px; }
+  .pills { display: flex; gap: 8px; margin-top: 22px; flex-wrap: wrap; }
+  .pill { font-size: 13px; font-weight: 700; padding: 6px 12px; border-radius: 999px; background: rgba(255,122,47,0.16); color: #ffb48a; border: 1px solid rgba(255,122,47,0.35); }
+  .phone {
+    position: absolute; width: 218px; padding: 7px; border-radius: 38px; background: #050403;
+    box-shadow: 0 0 0 2px #2b2522, 0 24px 60px rgba(0,0,0,0.55);
+  }
+  .phone .screen { border-radius: 31px; overflow: hidden; background: #000; }
+  .phone .bar { height: 26px; background: #000; display: flex; align-items: center; padding: 4px 20px 0 22px; font-size: 11px; font-weight: 600; }
+  .phone img { display: block; width: 100%; }
+  .p1 { left: 560px; top: 40px; transform: rotate(-5deg); }
+  .p2 { left: 748px; top: 70px; transform: rotate(4deg); }
+</style>
+</head>
+<body>
+  <div class="left">
+    <div class="brand"><img src="media/icon-rounded.png" alt=""><span>OpenStride</span></div>
+    <h1>An AI running coach<br>that runs on <em>your iPhone</em></h1>
+    <p>Plans each week from your Apple Health runs and heart rate, and cuts back when you do too much too fast.</p>
+    <div class="pills">
+      <span class="pill">Gemma 3 4B on-device</span>
+      <span class="pill">Apple Health</span>
+      <span class="pill">$10 one-time</span>
+    </div>
+  </div>
+  <div class="phone p1"><div class="screen"><div class="bar">9:41</div><img src="appstore/screens/s1.png" alt=""></div></div>
+  <div class="phone p2"><div class="screen"><div class="bar">9:41</div><img src="appstore/screens/s2.png" alt=""></div></div>
+</body>
+</html>
