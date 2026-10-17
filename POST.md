@@ -18,9 +18,13 @@ I run with Nike Run Club. It tracks every run well, but its plans aren't persona
 - **HR drift** between the first and second half of each run
 - **How much of last week you actually did**
 
-Every week, Gemma (Google's open-weight model) reviews those signals, adjusts the plan, and tells you why in plain words. It runs on the iPhone through MLX. No account, no server, and your health data never leaves the phone.
+Every week, Gemma (Google's open-weight model) reviews those signals, adjusts the plan, and tells you why in plain words. It runs on the iPhone through MLX, so the app needs no account or server. With the on-device model (the default), your health data stays on the phone.
 
-Who would pay: adaptive training plans are already a paid category (Runna, TrainingPeaks), sold as monthly subscriptions. OpenStride's running cost per user is zero because the model runs on the phone, so it can be a one-time purchase.
+### Pricing
+
+One-time purchase on the App Store and Google Play: **$10 (₹599 in India)**. No subscription or account.
+
+Adaptive training plans are already a paid category (Runna, TrainingPeaks), sold as monthly subscriptions. OpenStride can skip the subscription because the coach runs on the phone: after someone buys it, they cost nothing to serve. The app is iOS only today; the Play Store version comes with Android.
 
 ## Demo
 
@@ -101,7 +105,7 @@ At 64 tokens per step it fits. A full plan (both Gemma calls) now takes about 20
 
 ### Real data is messier than test data
 
-My own runs exposed two things the personas didn't. None of my runs from the last four weeks have heart rate recorded, so the drift signal simply isn't there, and the coach has to work without it. And my "best effort" wasn't all-out, so the race formula underrated my fitness. Now, when heart rate exists, VDOT is also estimated from pace and heart rate reserve, and the higher estimate wins.
+My own runs exposed two things the personas didn't. None of my runs from the last four weeks have heart rate recorded, so there's no drift signal, and the coach has to work without it. And my "best effort" wasn't all-out, so the race formula underrated my fitness. Now, when heart rate exists, VDOT is also estimated from pace and heart rate reserve, and the higher estimate wins.
 
 ### Testing the real HealthKit path
 
@@ -113,7 +117,7 @@ SwiftUI, HealthKit, Swift Charts, XCUITest on simulator and device, [MLX Swift L
 
 ## Why Does Open Innovation Matter?
 
-**Privacy that holds up.** Heart rate, resting heart rate and VO2 max are health data. With an open-weight model on the device, "your data never leaves your phone" is a property of the architecture, not a line in a privacy policy. A closed API can't offer that.
+**Privacy that holds up.** Heart rate, resting heart rate and VO2 max are health data. With an open-weight model on the device, the coach has no server to send your data to. A closed API needs one.
 
 **Zero marginal cost.** Every plan runs on the phone's GPU. No per-token bill means a solo developer can price this as a one-time purchase instead of a subscription that has to cover inference.
 

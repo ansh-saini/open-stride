@@ -545,7 +545,7 @@ public struct CoachAgent: Sendable {
         }
         if let r = review, r.compliancePct < 60 {
             pct = min(pct, -15)
-            reasons.append("You got through \(r.compliancePct)% of last week, so we hold back instead of adding more.")
+            reasons.append("You finished \(r.compliancePct)% of last week, so this week stays lighter.")
         }
         if let drift = m.hrDriftPct, drift > 5 {
             pace = 15

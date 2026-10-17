@@ -15,9 +15,9 @@ struct OnboardingView: View {
             Form {
                 Section {
                     VStack(alignment: .leading, spacing: 8) {
-                        Text("A coach that reads your body, not a template.")
+                        Text("A coach that reads your body.")
                             .font(.title2.bold())
-                        Text("OpenStride reads your runs and heart rate from Apple Health, works out your zones and training load, and plans each week for you. The coach is Gemma, an open model running on this iPhone. Your health data never leaves the phone.")
+                        Text("OpenStride reads your runs and heart rate from Apple Health, works out your zones and training load, and plans each week for you. The coach is Gemma, an open model running on this iPhone, so your health data stays here.")
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }

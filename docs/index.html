@@ -87,8 +87,8 @@
   <header class="hero">
     <div>
       <div class="brand"><img src="media/icon.png" alt="">OpenStride</div>
-      <h1>A running coach that reads your body, not a template.</h1>
-      <p class="lede">OpenStride reads your runs and heart rate from Apple Health, works out your zones and training load, and plans each week. The coach is Gemma 3 4B, an open-weight model running on the iPhone. Your health data never leaves the phone.</p>
+      <h1>A running coach that reads your body.</h1>
+      <p class="lede">OpenStride reads your runs and heart rate from Apple Health, works out your zones and training load, and plans each week. The coach is Gemma 3 4B, an open-weight model running on the iPhone, so your health data stays on the phone.</p>
       <div class="pills">
         <span class="pill">Gemma 3 4B on-device</span>
         <span class="pill">Apple Health</span>
@@ -98,6 +98,7 @@
       <div class="cta">
         <a class="btn" href="https://github.com/ansh-saini/open-stride">Code on GitHub</a>
         <a class="btn secondary" href="media/openstride-demo.mp4">Watch the demo</a>
+        <a class="btn secondary" href="appstore/">Sample store listing</a>
       </div>
     </div>
     <div class="phone">
@@ -129,7 +130,7 @@
   </section>
 
   <section>
-    <h2>Tested, not eyeballed</h2>
+    <h2>How it is tested</h2>
     <p class="sub">Six synthetic runners, each with an expected coach behavior, run 3 times per model. On-device rows use the same 4-bit MLX weights the iPhone downloads; times on an M2 Pro.</p>
     <div class="tablewrap">
       <table>
@@ -148,7 +149,7 @@
   <section>
     <h2>Why open weights</h2>
     <div class="grid2">
-      <div class="card"><h3>Private by design</h3><p>Heart rate and VO2 max are health data. With the model on the phone, "your data stays on your phone" is a property of the app, not a policy.</p></div>
+      <div class="card"><h3>Private by design</h3><p>Heart rate and VO2 max are health data. With the model on the phone, the app has no server to send them to.</p></div>
       <div class="card"><h3>No per-user cost</h3><p>Every plan runs on the phone's GPU. No API bill means it can be a one-time purchase.</p></div>
       <div class="card"><h3>Works on the trail</h3><p>After a one-time 2.6 GB download, planning works with no signal.</p></div>
       <div class="card"><h3>Inspectable and swappable</h3><p>The same weights run on a Mac, in the simulator and on the phone, so they can be tested, and a newer Gemma can drop in.</p></div>
@@ -156,7 +157,7 @@
   </section>
 
   <footer>
-    Built for the DEV Hacktoberfest 2026 Open-Source AI Challenge. MIT licensed. A training tool, not medical advice.
+    Built for the DEV Hacktoberfest 2026 Open-Source AI Challenge. MIT licensed. OpenStride is a training tool and does not give medical advice.
   </footer>
 </main>
 </body>

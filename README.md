@@ -1,6 +1,6 @@
 # OpenStride
 
-An AI running coach for iPhone that reads your own data from Apple Health and plans your week with Gemma, an open-weight model running on the phone. Your health data never leaves the device.
+An AI running coach for iPhone that reads your own data from Apple Health and plans your week with Gemma, an open-weight model running on the phone. With the on-device model (the default), your health data stays on the phone.
 
 Built for the DEV Hacktoberfest 2026 Open-Source AI Challenge, Week 2 ("Side Hustle").
 
@@ -62,6 +62,14 @@ Columns: **valid** (parseable decision), **final** (plan after guardrails is rig
 
 See [`eval/RESULTS.md`](eval/RESULTS.md) for the latest numbers.
 
+## Pricing
+
+One-time purchase on the App Store and Google Play: **$10 (₹599 in India)**. No subscription or account.
+
+Sample store listing with screenshots and copy: [ansh-saini.github.io/open-stride/appstore](https://ansh-saini.github.io/open-stride/appstore/) (assets in `docs/appstore`).
+
+The coach runs on the phone, so a user costs nothing to serve after they buy. There's no server bill to pass on every month. The app is iOS only today; the Play Store listing comes with the Android version.
+
 ## Run it
 
 Requirements: Xcode 26, an iPhone with Apple Health data (Apple Watch runs give the best signal), XcodeGen.
@@ -98,7 +106,7 @@ UI tests: `HealthFlowTests` (simulator; seeds sample data into the simulator's H
 
 ## Not medical advice
 
-OpenStride is a training tool, not a doctor. Stop and get checked if something hurts.
+OpenStride is a training tool and does not give medical advice. Stop and get checked if something hurts.
 
 ## License
 

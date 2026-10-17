@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenStride Store Listing</title>
+<meta name="description" content="Sample App Store listing for OpenStride, an AI running coach that runs on your iPhone.">
+<link rel="icon" href="../media/icon.png">
+<style>
+  :root {
+    --bg: #ffffff; --surface: #f5f5f7; --text: #1d1d1f; --muted: #6e6e73; --line: #e5e5ea;
+    --blue: #0a84ff; --accent: #f0652a; --note-bg: #fff4ec; --note-text: #8a3b12;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #000000; --surface: #1c1c1e; --text: #f5f5f7; --muted: #98989d; --line: #2c2c2e;
+      --note-bg: #2a1a10; --note-text: #ffb38a;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--text); font: 16px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 980px; margin: 0 auto; padding: 0 16px 64px; }
+  .note { background: var(--note-bg); color: var(--note-text); font-size: 14px; padding: 10px 14px; border-radius: 10px; margin: 16px 0 28px; }
+  .note a { color: inherit; }
+  .head { display: grid; grid-template-columns: 180px 1fr; gap: 28px; align-items: center; }
+  .icon { width: 180px; height: 180px; border-radius: 40px; box-shadow: 0 0 0 1px var(--line); }
+  h1 { font-size: 34px; line-height: 1.15; margin: 0; letter-spacing: -0.01em; }
+  .subtitle { font-size: 20px; color: var(--muted); margin: 4px 0 2px; }
+  .seller { color: var(--blue); font-size: 15px; margin: 0 0 16px; }
+  .buy { display: inline-block; background: var(--blue); color: #fff; font-weight: 700; padding: 7px 22px; border-radius: 999px; font-size: 16px; border: 0; }
+  .buy-note { font-size: 12px; color: var(--muted); margin-left: 10px; }
+  .facts { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin: 28px 0; }
+  .fact { text-align: center; padding: 14px 6px; }
+  .fact + .fact { border-left: 1px solid var(--line); }
+  .fact .k { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); font-weight: 600; }
+  .fact .v { font-size: 20px; font-weight: 700; color: var(--muted); margin-top: 2px; }
+  .fact .s { font-size: 12px; color: var(--muted); }
+  h2 { font-size: 22px; margin: 32px 0 12px; }
+  .shots { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 10px; }
+  .shots img { height: 520px; border-radius: 22px; scroll-snap-align: start; flex: none; box-shadow: 0 0 0 1px var(--line); }
+  .desc { white-space: pre-line; max-width: 720px; }
+  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .card { background: var(--surface); border-radius: 16px; padding: 20px; }
+  .card h3 { margin: 6px 0 4px; font-size: 17px; }
+  .card p { margin: 0; color: var(--muted); font-size: 14px; }
+  .card svg { color: var(--blue); }
+  dl { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 24px; margin: 0; }
+  dl div { border-top: 1px solid var(--line); padding: 10px 0; }
+  dt { font-size: 13px; color: var(--muted); }
+  dd { margin: 2px 0 0; font-size: 15px; }
+  footer { margin-top: 40px; font-size: 13px; color: var(--muted); }
+  @media (max-width: 700px) {
+    .head { grid-template-columns: 96px 1fr; gap: 16px; }
+    .icon { width: 96px; height: 96px; border-radius: 22px; }
+    h1 { font-size: 22px; }
+    .subtitle { font-size: 15px; }
+    .facts { grid-template-columns: repeat(2, 1fr); }
+    .fact:nth-child(3) { border-left: 0; }
+    .fact:nth-child(n+3) { border-top: 1px solid var(--line); }
+    .shots img { height: 420px; }
+    .cards, dl { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <p class="note">Sample listing. OpenStride is not on the App Store yet. <a href="../">Back to the demo</a></p>
+
+  <header class="head">
+    <img class="icon" src="../media/icon.png" alt="OpenStride icon">
+    <div>
+      <h1>OpenStride: AI Running Coach</h1>
+      <p class="subtitle">Plans from your heart and pace</p>
+      <p class="seller">Ansh Saini</p>
+      <span class="buy">$10</span><span class="buy-note">₹599 in India. One-time purchase.</span>
+    </div>
+  </header>
+
+  <div class="facts">
+    <div class="fact"><div class="k">Ratings</div><div class="v">New</div><div class="s">No ratings yet</div></div>
+    <div class="fact"><div class="k">Age</div><div class="v">4+</div><div class="s">Years old</div></div>
+    <div class="fact"><div class="k">Category</div><div class="v">Health</div><div class="s">& Fitness</div></div>
+    <div class="fact"><div class="k">Developer</div><div class="v">AS</div><div class="s">Ansh Saini</div></div>
+  </div>
+
+  <section>
+    <h2>Preview</h2>
+    <div class="shots">
+      <img src="web/appstore-1.jpg" alt="A coach that reads your body">
+      <img src="web/appstore-2.jpg" alt="It notices when you overdo it">
+      <img src="web/appstore-3.jpg" alt="Your paces. Your zones.">
+      <img src="web/appstore-4.jpg" alt="Zones built from your heart">
+      <img src="web/appstore-5.jpg" alt="See exactly why it decided">
+      <img src="web/appstore-6.jpg" alt="Runs on your iPhone">
+    </div>
+  </section>
+
+  <section>
+    <p><strong>Your running plan, built from your Apple Health data and adjusted every week by a coach that runs on your iPhone. Pay once. No account, no subscription.</strong></p>
+    <div class="desc">OpenStride reads your runs and heart rate from Apple Health and plans your training week around them.
+
+Each week the coach checks four things:
+• Load ratio: did this week jump far above your usual training?
+• Heart rate drift: are your easy runs too fast?
+• Time off: are you coming back from a break?
+• Last week: how much of the plan did you finish?
+
+If something is off, it changes the plan and tells you why in a short note. If everything is in range, the plan builds as scheduled.
+
+The Insights tab shows every number the coach used and every change it made.
+
+The coach is Gemma 3, an open-weight model that runs on your iPhone. With the on-device coach, your health data stays on your phone. No account or analytics.
+
+OpenStride is a training tool and does not give medical advice.</div>
+  </section>
+
+  <section>
+    <h2>What's New</h2>
+    <p>Version 1.0. First release.</p>
+  </section>
+
+  <section>
+    <h2>App Privacy</h2>
+    <div class="cards">
+      <div class="card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="M9 12l2 2 4-4"/></svg>
+        <h3>Data Not Collected</h3>
+        <p>The developer does not collect any data from this app. Health data is read on the device and stays there.</p>
+      </div>
+      <div class="card">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg>
+        <h3>On-device coach</h3>
+        <p>Plans are written by Gemma 3 on your iPhone. The model downloads once (2.6 GB, or 0.8 GB for the smaller one), then planning works offline.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Information</h2>
+    <dl>
+      <div><dt>Seller</dt><dd>Ansh Saini</dd></div>
+      <div><dt>Size</dt><dd>45 MB, plus one-time model download</dd></div>
+      <div><dt>Category</dt><dd>Health & Fitness</dd></div>
+      <div><dt>Compatibility</dt><dd>iPhone, iOS 17 or later</dd></div>
+      <div><dt>Languages</dt><dd>English</dd></div>
+      <div><dt>Price</dt><dd>$10 (₹599 in India)</dd></div>
+    </dl>
+  </section>
+
+  <footer>Screenshots recorded on an iPhone 13 Pro with a sample runner. Listing copy and assets: <a href="https://github.com/ansh-saini/open-stride/tree/main/docs/appstore">docs/appstore</a>.</footer>
+</main>
+</body>
+</html>
