@@ -1,0 +1,308 @@
+[
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 27.5,
+    "finalKm" : 27.5,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 7.246683955192566,
+    "message" : "Your signals are all in range, so this week builds as planned. This week continues your base phase, and you’ll be working through your four scheduled runs. Remember to focus on maintaining a steady and comfortable pace throughout your long run on Sunday.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "steady",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 27.5,
+    "finalKm" : 27.5,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 7.089388012886047,
+    "message" : "Your signals are all in range, so this week builds as planned. This week continues your base phase, and you’ll be working through your four planned runs. Remember to focus on maintaining good form throughout your longer run on Sunday.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "steady",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 27.5,
+    "finalKm" : 27.5,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 6.957523941993713,
+    "message" : "Your signals are all in range, so this week builds as planned. This week continues your base phase, and you’ll be working through your four scheduled runs. Remember to focus on maintaining a consistent effort throughout each run.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "steady",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 31,
+    "finalKm" : 25,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 8.172639012336731,
+    "message" : "Your training load ratio is 1.98, so this week rose much faster than your usual load. This week, we’ve reduced your weekly distance to 25 km, which is a 19% decrease from your previous plan. We’re making this adjustment to address the elevated load ratio and help reduce any potential injury risk.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "overreaching",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 31,
+    "finalKm" : 25,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 8.417970061302185,
+    "message" : "Your training load ratio is 1.98, so this week rose much faster than your usual load. This week, we’ve reduced your weekly distance to 25 km, which is a 19% decrease from your previous plan. We’re making this adjustment to help manage your load and reduce any potential injury risk.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "overreaching",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 31,
+    "finalKm" : 25,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 8.34706199169159,
+    "message" : "Your training load ratio is 1.98, so this week rose much faster than your usual load. This week, we’ve reduced your weekly distance to 25 km, which is a 19% decrease from your previous plan. We’re making this change to address the elevated load ratio and reduce your risk of injury.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "overreaching",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 13,
+    "finalKm" : 11,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 9.627251029014587,
+    "message" : "It has been 21 days since your last run. This week, we’re reducing your weekly distance to 11 km, which is a 15% decrease from your previous plan. Because you didn’t complete your target distance last week, we’re focusing on a slower, more sustainable approach to rebuild your fitness.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "detrained",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 13,
+    "finalKm" : 11,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 9.50446093082428,
+    "message" : "It has been 21 days since your last run. This week, we’re reducing your weekly distance to 11 km, which is a 15% decrease from your previous plan. Because you didn’t complete your target distance last week, we’re focusing on a slower, easier approach to help your body recover.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "detrained",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 13,
+    "finalKm" : 11,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 9.773161053657532,
+    "message" : "It has been 21 days since your last run. This week, we’re reducing your weekly distance to 11 km, which is a 15% decrease from your previous plan. Because you didn’t complete your target distance last week, we’re focusing on a more conservative approach to allow your body to recover and rebuild.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "detrained",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 27.5,
+    "finalKm" : 27.5,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 8.396404027938843,
+    "message" : "Your heart rate drifted 7.7% during recent runs. This week, we’ve adjusted your easy pace to be 15 seconds per kilometer slower, aiming for a pace of 6:06-6:42\/km. This change is because we want to ensure you’re truly running at a comfortable, easy speed, even on those slower days.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "hr_drift",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 27.5,
+    "finalKm" : 27.5,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 7.986047983169556,
+    "message" : "Your heart rate drifted 7.7% during recent runs. This week, we adjusted your easy pace to be 15 seconds per kilometer slower, aiming for a pace of 6:06-6:42\/km. This change helps to keep your heart rate within a healthier range during those easier efforts.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "hr_drift",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 27.5,
+    "finalKm" : 27.5,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 8.124341011047363,
+    "message" : "Your heart rate drifted 7.7% during recent runs. This week, we adjusted your easy pace to be 15 seconds per kilometer slower, aiming for a pace of 6:06-6:42\/km. This change helps to keep your heart rate within a healthier range during those easier efforts.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "hr_drift",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 21.5,
+    "finalKm" : 17,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 8.058313012123108,
+    "message" : "You completed 20% of last week's plan (5 km of 25 km). You’ve adjusted your weekly distance this week to 17 km, which is a reduction from your previous plan. This change helps you recover and stay within the recommended volume reduction of 10-20% after last week’s run.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "missed_sessions",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 21.5,
+    "finalKm" : 17,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 7.891162037849426,
+    "message" : "You completed 20% of last week's plan (5 km of 25 km). You’ll be running 17 kilometers this week, which is a reduction from your previous plan. We’re adjusting the distance to allow your body to recover and build a solid foundation.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "missed_sessions",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 21.5,
+    "finalKm" : 17,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 7.711271047592163,
+    "message" : "You completed 20% of last week's plan (5 km of 25 km). You’ll be running 17 kilometers this week, which is a reduction from your previous plan. We’re adjusting the distance to allow your body to recover and build a solid base.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "missed_sessions",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 10,
+    "finalKm" : 10,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 7.003636002540588,
+    "message" : "Your signals are all in range, so this week builds as planned. This week’s runs will continue to build your endurance, focusing on maintaining a steady pace throughout your long run on Sunday. Remember to listen to your body and adjust as needed.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "beginner",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 10,
+    "finalKm" : 10,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 7.121307015419006,
+    "message" : "Your signals are all in range, so this week builds as planned. Keep your runs steady and focus on maintaining a comfortable pace throughout each one. Remember to listen to your body and adjust as needed to complete your 10 km total.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "beginner",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 10,
+    "finalKm" : 10,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 6.630203008651733,
+    "message" : "Your signals are all in range, so this week builds as planned. Keep your runs steady and focus on maintaining a comfortable pace throughout each one. Remember to listen to your body and adjust as needed.",
+    "messageKept" : true,
+    "model" : "Gemma 3 4B (on-device)",
+    "paceOK" : true,
+    "persona" : "beginner",
+    "valid" : true
+  }
+]

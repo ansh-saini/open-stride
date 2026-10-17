@@ -1,0 +1,308 @@
+[
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 27.5,
+    "finalKm" : 27.5,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 6.702431082725525,
+    "message" : "Your signals are all in range, so this week builds as planned. Focus on maintaining a comfortable pace during the long run.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "steady",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 27.5,
+    "finalKm" : 27.5,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 3.822440981864929,
+    "message" : "Your signals are all in range, so this week builds as planned. Focus on maintaining a comfortable pace during the long run.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "steady",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 27.5,
+    "finalKm" : 27.5,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 3.7757070064544678,
+    "message" : "Your signals are all in range, so this week builds as planned. Focus on maintaining a consistent pace throughout the runs.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "steady",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 31,
+    "finalKm" : 25,
+    "guardrailHits" : [
+      "floor: volume 0% -> -20% for load ratio 1.98"
+    ],
+    "hardOK" : true,
+    "latency" : 4.155972957611084,
+    "message" : "Your training load ratio is 1.98, so this week rose much faster than your usual load. The weekly distance was reduced by 19%.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "overreaching",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 31,
+    "finalKm" : 25,
+    "guardrailHits" : [
+      "floor: volume 0% -> -20% for load ratio 1.98"
+    ],
+    "hardOK" : true,
+    "latency" : 4.266674995422363,
+    "message" : "Your training load ratio is 1.98, so this week rose much faster than your usual load. The weekly distance was reduced by 19%.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "overreaching",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 31,
+    "finalKm" : 25,
+    "guardrailHits" : [
+      "floor: volume 0% -> -20% for load ratio 1.98"
+    ],
+    "hardOK" : true,
+    "latency" : 4.059514045715332,
+    "message" : "Your training load ratio is 1.98, so this week rose much faster than your usual load. The weekly distance was reduced by 19%.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "overreaching",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 13,
+    "finalKm" : 11,
+    "guardrailHits" : [
+      "floor: volume 0% -> -10% for 0% completion"
+    ],
+    "hardOK" : true,
+    "latency" : 3.8834609985351562,
+    "message" : "It has been 21 days since your last run. The weekly distance has been reduced by 15%.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "detrained",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 13,
+    "finalKm" : 11,
+    "guardrailHits" : [
+      "floor: volume 0% -> -10% for 0% completion"
+    ],
+    "hardOK" : true,
+    "latency" : 3.9742990732192993,
+    "message" : "It has been 21 days since your last run. The weekly distance decreased by 15%, making the run feel easier.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "detrained",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 13,
+    "finalKm" : 11,
+    "guardrailHits" : [
+      "floor: volume 0% -> -10% for 0% completion"
+    ],
+    "hardOK" : true,
+    "latency" : 3.8120830059051514,
+    "message" : "It has been 21 days since your last run. The weekly distance has decreased by 15%.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "detrained",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 27.5,
+    "finalKm" : 27.5,
+    "guardrailHits" : [
+      "floor: easy pace slowdown 0s -> 10s for HR drift 7.7%"
+    ],
+    "hardOK" : true,
+    "latency" : 5.072276949882507,
+    "message" : "Your heart rate drifted 7.7% during recent runs. That’s a noticeable shift, and it’s a result of the slower easy pace. It’s a good sign, encouraging you to keep building.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "hr_drift",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 27.5,
+    "finalKm" : 27.5,
+    "guardrailHits" : [
+      "floor: easy pace slowdown 0s -> 10s for HR drift 7.7%"
+    ],
+    "hardOK" : true,
+    "latency" : 4.327061891555786,
+    "message" : "Your heart rate drifted 7.7% during recent runs. This week’s runs were slower, specifically 6:01-6:37\/km, a noticeable difference from the standard plan.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "hr_drift",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 27.5,
+    "finalKm" : 27.5,
+    "guardrailHits" : [
+      "floor: easy pace slowdown 0s -> 10s for HR drift 7.7%"
+    ],
+    "hardOK" : true,
+    "latency" : 5.049957990646362,
+    "message" : "Your heart rate drifted 7.7% during recent runs. This week’s runs were slower, specifically 6:01-6:37\/km.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "hr_drift",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 21.5,
+    "finalKm" : 19.5,
+    "guardrailHits" : [
+      "floor: volume 0% -> -10% for 20% completion"
+    ],
+    "hardOK" : true,
+    "latency" : 4.418694972991943,
+    "message" : "You completed 20% of last week’s plan (5 km of 25 km). This week’s distance is 19.5 km, a reduction of 9% compared to last week’s plan.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "missed_sessions",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 21.5,
+    "finalKm" : 19.5,
+    "guardrailHits" : [
+      "floor: volume 0% -> -10% for 20% completion"
+    ],
+    "hardOK" : true,
+    "latency" : 4.4464099407196045,
+    "message" : "You completed 20% of last week’s plan (5 km of 25 km). This week’s distance is 19.5 km, a reduction of 9% compared to last week’s plan.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "missed_sessions",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 21.5,
+    "finalKm" : 19.5,
+    "guardrailHits" : [
+      "floor: volume 0% -> -10% for 20% completion"
+    ],
+    "hardOK" : true,
+    "latency" : 4.460953950881958,
+    "message" : "You completed 20% of last week’s plan (5 km of 25 km). This week’s distance is 19.5 km, a reduction of 9% compared to last week’s plan.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "missed_sessions",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 10,
+    "finalKm" : 10,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 3.806889057159424,
+    "message" : "Your signals are all in range, so this week builds as planned. Focus on feeling strong and steady.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "beginner",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 10,
+    "finalKm" : 10,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 3.97497296333313,
+    "message" : "Your signals are all in range, so this week builds as planned. Focus on feeling strong and steady.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "beginner",
+    "valid" : true
+  },
+  {
+    "citesNumber" : true,
+    "directionOK" : true,
+    "draftKm" : 10,
+    "finalKm" : 10,
+    "guardrailHits" : [
+
+    ],
+    "hardOK" : true,
+    "latency" : 3.658596992492676,
+    "message" : "Your signals are all in range, so this week builds as planned. Focus on feeling strong and steady.",
+    "messageKept" : true,
+    "model" : "Gemma 3 1B (on-device)",
+    "paceOK" : true,
+    "persona" : "beginner",
+    "valid" : true
+  }
+]

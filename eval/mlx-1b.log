@@ -1,0 +1,62 @@
+loaded Gemma 3 1B (on-device) in 4.6s
+[Gemma 3 1B (on-device)] steady #1: PASS  km 27.5->27.5  6.7s
+    coach: Your signals are all in range, so this week builds as planned. Focus on maintaining a comfortable pace during the long run.
+    Mon  easy      7 km @ 5:56-6:32/km
+    Wed  tempo     5 km @ 4:58-5:04/km
+    Fri  easy      7 km @ 5:56-6:32/km
+    Sun  long      8.5 km @ 6:06-6:32/km
+    total 27.5 km, Base week 2/11
+[Gemma 3 1B (on-device)] steady #2: PASS  km 27.5->27.5  3.8s
+[Gemma 3 1B (on-device)] steady #3: PASS  km 27.5->27.5  3.8s
+[Gemma 3 1B (on-device)] overreaching #1: PASS(floor)  km 31.0->25.0  4.2s
+    coach: Your training load ratio is 1.98, so this week rose much faster than your usual load. The weekly distance was reduced by 19%.
+    guardrails: floor: volume 0% -> -20% for load ratio 1.98
+    Mon  easy      6.5 km @ 5:53-6:29/km
+    Wed  tempo     4.5 km @ 4:55-5:01/km
+    Fri  easy      6.5 km @ 5:53-6:29/km
+    Sun  long      7.5 km @ 6:03-6:29/km
+    total 25 km, Base week 2/11
+[Gemma 3 1B (on-device)] overreaching #2: PASS(floor)  km 31.0->25.0  4.3s
+[Gemma 3 1B (on-device)] overreaching #3: PASS(floor)  km 31.0->25.0  4.1s
+[Gemma 3 1B (on-device)] detrained #1: PASS(floor)  km 13.0->11.0  3.9s
+    coach: It has been 21 days since your last run. The weekly distance has been reduced by 15%.
+    guardrails: floor: volume 0% -> -10% for 0% completion
+    Mon  easy      2.5 km @ 5:59-6:35/km
+    Wed  easy      2.5 km @ 5:59-6:35/km
+    Fri  easy      2.5 km @ 5:59-6:35/km
+    Sun  long      3.5 km @ 6:09-6:35/km
+    total 11 km, Base week 2/11
+[Gemma 3 1B (on-device)] detrained #2: PASS(floor)  km 13.0->11.0  4.0s
+[Gemma 3 1B (on-device)] detrained #3: PASS(floor)  km 13.0->11.0  3.8s
+[Gemma 3 1B (on-device)] hr_drift #1: PASS(floor)  km 27.5->27.5  5.1s
+    coach: Your heart rate drifted 7.7% during recent runs. That’s a noticeable shift, and it’s a result of the slower easy pace. It’s a good sign, encouraging you to keep building.
+    guardrails: floor: easy pace slowdown 0s -> 10s for HR drift 7.7%
+    Mon  easy      7 km @ 6:01-6:37/km
+    Wed  tempo     5 km @ 4:53-5:00/km
+    Fri  easy      7 km @ 6:01-6:37/km
+    Sun  long      8.5 km @ 6:11-6:37/km
+    total 27.5 km, Base week 2/11
+[Gemma 3 1B (on-device)] hr_drift #2: PASS(floor)  km 27.5->27.5  4.3s
+[Gemma 3 1B (on-device)] hr_drift #3: PASS(floor)  km 27.5->27.5  5.0s
+[Gemma 3 1B (on-device)] missed_sessions #1: PASS(floor)  km 21.5->19.5  4.4s
+    coach: You completed 20% of last week’s plan (5 km of 25 km). This week’s distance is 19.5 km, a reduction of 9% compared to last week’s plan.
+    guardrails: floor: volume 0% -> -10% for 20% completion
+    Mon  easy      5 km @ 5:58-6:35/km
+    Wed  tempo     3.5 km @ 4:59-5:06/km
+    Fri  easy      5 km @ 5:58-6:35/km
+    Sun  long      6 km @ 6:08-6:35/km
+    total 19.5 km, Base week 2/11
+[Gemma 3 1B (on-device)] missed_sessions #2: PASS(floor)  km 21.5->19.5  4.4s
+[Gemma 3 1B (on-device)] missed_sessions #3: PASS(floor)  km 21.5->19.5  4.5s
+[Gemma 3 1B (on-device)] beginner #1: PASS  km 10.0->10.0  3.8s
+    coach: Your signals are all in range, so this week builds as planned. Focus on feeling strong and steady.
+    Tue  easy      3 km @ 8:43-9:36/km
+    Thu  easy      3 km @ 8:43-9:36/km
+    Sun  long      4 km @ 8:53-9:36/km
+    total 10 km, Base week 2/11
+[Gemma 3 1B (on-device)] beginner #2: PASS  km 10.0->10.0  4.0s
+[Gemma 3 1B (on-device)] beginner #3: PASS  km 10.0->10.0  3.7s
+
+model                      valid  final  model  msg-kept  cites#  guardrail-hits/run  avg-latency
+Gemma 3 1B (on-device)     100%   100%    33%    100%    100%    0.67                4.3s
+wrote eval/mlx-1b.json

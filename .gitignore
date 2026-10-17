@@ -1,0 +1,17 @@
+.DS_Store
+build/
+.build/
+.build-xc/
+.swiftpm/
+DerivedData/
+*.xcodeproj/xcuserdata/
+*.xcworkspace/xcuserdata/
+App/OpenStride.xcodeproj/
+eval/ui.xcresult/
+eval/ui-shots/
+eval/device.xcresult/
+eval/device-shots/
+eval/device-test.log
+eval/demo-out/
+eval/demo.xcresult/
+eval/demo-test.log

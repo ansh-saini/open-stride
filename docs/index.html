@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>OpenStride</title>
+<meta name="description" content="An AI running coach for iPhone. Reads Apple Health, plans your week with Gemma running on the phone.">
+<link rel="icon" href="media/icon.png">
+<style>
+  :root {
+    --bg: #fbfaf8; --surface: #ffffff; --text: #1d1b19; --muted: #6b6560; --line: #e8e3dd;
+    --accent: #f0652a; --accent-soft: #fff0e8; --ok: #1f9d55; --flag: #d97706;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #121110; --surface: #1c1a18; --text: #f2efeb; --muted: #a39d96; --line: #2c2926;
+      --accent: #ff8a4c; --accent-soft: #2a1a12; --ok: #4ade80; --flag: #fbbf24;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 1040px; margin: 0 auto; padding: 0 16px 80px; }
+  a { color: var(--accent); }
+  header.hero {
+    display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; padding: 64px 0 40px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; font-weight: 700; font-size: 20px; }
+  .brand img { width: 40px; height: 40px; border-radius: 10px; }
+  h1 { font-size: 46px; line-height: 1.1; letter-spacing: -0.02em; margin: 20px 0 16px; }
+  .lede { font-size: 19px; color: var(--muted); margin: 0 0 24px; }
+  .pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+  .pill { background: var(--accent-soft); color: var(--accent); border-radius: 999px; padding: 4px 12px; font-size: 14px; font-weight: 600; }
+  .cta { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 11px 18px; border-radius: 10px; text-decoration: none; font-weight: 600;
+    background: var(--accent); color: #fff;
+  }
+  .btn.secondary { background: var(--surface); color: var(--text); border: 1px solid var(--line); }
+  .phone {
+    justify-self: center; width: 100%; max-width: 330px; border-radius: 38px; overflow: hidden;
+    border: 10px solid #000; box-shadow: 0 30px 60px rgba(0,0,0,0.18); background: #000; aspect-ratio: 720 / 1558;
+  }
+  .phone video { width: 100%; height: 100%; display: block; object-fit: cover; }
+  section { padding: 48px 0 8px; border-top: 1px solid var(--line); }
+  h2 { font-size: 28px; letter-spacing: -0.01em; margin: 0 0 8px; }
+  .sub { color: var(--muted); margin: 0 0 28px; max-width: 680px; }
+  .shots { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .shots figure { margin: 0; }
+  .shots img { width: 100%; border-radius: 18px; border: 1px solid var(--line); display: block; }
+  .shots figcaption { font-size: 14px; color: var(--muted); margin-top: 8px; }
+  .steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; counter-reset: step; }
+  .step { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+  .step::before {
+    counter-increment: step; content: counter(step); display: inline-grid; place-items: center;
+    width: 26px; height: 26px; border-radius: 50%; background: var(--accent-soft); color: var(--accent);
+    font-weight: 700; font-size: 14px; margin-bottom: 8px;
+  }
+  .step h3 { font-size: 16px; margin: 0 0 4px; }
+  .step p { font-size: 14px; color: var(--muted); margin: 0; }
+  .step.model { border-color: var(--accent); }
+  table { width: 100%; border-collapse: collapse; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; font-size: 15px; }
+  th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+  th { font-size: 13px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); font-weight: 600; }
+  td.num { font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: 0; }
+  tr.hl td { background: var(--accent-soft); font-weight: 600; }
+  .tablewrap { overflow-x: auto; }
+  .grid2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 20px; }
+  .card h3 { margin: 0 0 6px; font-size: 17px; }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  footer { color: var(--muted); font-size: 14px; padding-top: 32px; }
+  @media (max-width: 860px) {
+    header.hero { grid-template-columns: 1fr; padding-top: 40px; gap: 32px; }
+    h1 { font-size: 36px; }
+    .shots { grid-template-columns: repeat(2, 1fr); }
+    .steps { grid-template-columns: 1fr; }
+    .grid2 { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <header class="hero">
+    <div>
+      <div class="brand"><img src="media/icon.png" alt="">OpenStride</div>
+      <h1>A running coach that reads your body, not a template.</h1>
+      <p class="lede">OpenStride reads your runs and heart rate from Apple Health, works out your zones and training load, and plans each week. The coach is Gemma 3 4B, an open-weight model running on the iPhone. Your health data never leaves the phone.</p>
+      <div class="pills">
+        <span class="pill">Gemma 3 4B on-device</span>
+        <span class="pill">Apple Health</span>
+        <span class="pill">About 20 s per plan on iPhone 13 Pro</span>
+        <span class="pill">Works offline</span>
+      </div>
+      <div class="cta">
+        <a class="btn" href="https://github.com/ansh-saini/open-stride">Code on GitHub</a>
+        <a class="btn secondary" href="media/openstride-demo.mp4">Watch the demo</a>
+      </div>
+    </div>
+    <div class="phone">
+      <video src="media/openstride-demo.mp4" autoplay muted loop playsinline controls poster="media/iphone-week.png"></video>
+    </div>
+  </header>
+
+  <section>
+    <h2>What it looks like</h2>
+    <p class="sub">A sample runner who doubled their mileage last week. The coach sees a load ratio of 1.98, cuts volume and keeps one hard day.</p>
+    <div class="shots">
+      <figure><img src="media/iphone-week.png" alt="Weekly plan with a coach note about the load ratio"><figcaption>The week, with a note that matches the plan</figcaption></figure>
+      <figure><img src="media/iphone-session.png" alt="Tempo session detail with pace and heart rate targets"><figcaption>Paces and HR zones from your own data</figcaption></figure>
+      <figure><img src="media/iphone-signals.png" alt="Signals and heart rate zones"><figcaption>Signals with fixed thresholds</figcaption></figure>
+      <figure><img src="media/iphone-coach-saw.png" alt="The exact prompt the coach saw"><figcaption>Exactly what the coach saw</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <p class="sub">Small models are bad at arithmetic and good at reading a situation. So the math lives in code and the judgment lives in the model.</p>
+    <div class="steps">
+      <div class="step"><h3>Measure</h3><p>HR zones (Karvonen), VDOT pace zones, training load, HR drift, last week's completion.</p></div>
+      <div class="step"><h3>Draft</h3><p>A plan engine builds the week: phase, volume, long run, quality sessions.</p></div>
+      <div class="step model"><h3>Decide</h3><p>Gemma reads OK/FLAG signals and picks adjustments from a small action set.</p></div>
+      <div class="step"><h3>Guard</h3><p>Rules override anything unsafe. No flag means the draft stands.</p></div>
+      <div class="step model"><h3>Explain</h3><p>Gemma writes the note from facts about the final plan, so it always matches.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Tested, not eyeballed</h2>
+    <p class="sub">Six synthetic runners, each with an expected coach behavior, run 3 times per model. On-device rows use the same 4-bit MLX weights the iPhone downloads; times on an M2 Pro.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Coach</th><th>Final plan right</th><th>Model right on its own</th><th>Note matches plan</th><th>Time</th></tr></thead>
+        <tbody>
+          <tr class="hl"><td>Gemma 3 4B, on-device (MLX)</td><td class="num">100%</td><td class="num">100%</td><td class="num">100%</td><td class="num">8.0 s</td></tr>
+          <tr><td>Gemma 3 4B, Ollama</td><td class="num">100%</td><td class="num">100%</td><td class="num">100%</td><td class="num">4.8 s</td></tr>
+          <tr><td>Gemma 3 1B, on-device (MLX)</td><td class="num">100%</td><td class="num">33%</td><td class="num">100%</td><td class="num">4.3 s</td></tr>
+          <tr><td>Rules only</td><td class="num">100%</td><td class="num">100%</td><td class="num">100%</td><td class="num">0 s</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="sub" style="margin-top:16px">Plus 21 unit tests, a simulator UI test that writes a sample runner into Apple Health and reads it back through the real HealthKit path, and a device UI test on a real iPhone.</p>
+  </section>
+
+  <section>
+    <h2>Why open weights</h2>
+    <div class="grid2">
+      <div class="card"><h3>Private by design</h3><p>Heart rate and VO2 max are health data. With the model on the phone, "your data stays on your phone" is a property of the app, not a policy.</p></div>
+      <div class="card"><h3>No per-user cost</h3><p>Every plan runs on the phone's GPU. No API bill means it can be a one-time purchase.</p></div>
+      <div class="card"><h3>Works on the trail</h3><p>After a one-time 2.6 GB download, planning works with no signal.</p></div>
+      <div class="card"><h3>Inspectable and swappable</h3><p>The same weights run on a Mac, in the simulator and on the phone, so they can be tested, and a newer Gemma can drop in.</p></div>
+    </div>
+  </section>
+
+  <footer>
+    Built for the DEV Hacktoberfest 2026 Open-Source AI Challenge. MIT licensed. A training tool, not medical advice.
+  </footer>
+</main>
+</body>
+</html>
